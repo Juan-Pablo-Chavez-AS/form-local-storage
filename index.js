@@ -3,10 +3,8 @@ const inputs = [...document.querySelectorAll('input')];
 const validatedInputs = inputs.filter((input) => input.type !== "radio" && input.type !== "checkbox");
 const errorMessages = [...document.getElementsByClassName("error-message")];
 
-console.log(errorMessages);
 form.addEventListener('submit', function(event) {
     event.preventDefault();
-    console.log(validatedInputs);
 
     let error = false;
     validatedInputs.forEach((input) => {
@@ -31,5 +29,18 @@ form.addEventListener('reset', (event) => {
 });
 
 function saveToLocalStorage() {
-    // WIP: TODO
+    const submissions = JSON.parse(localStorage.getItem("submissions")) || [];
+    console.log(submissions);
+    if (submissions === undefined) {
+        localStorage.setItem("submissions", "[]");
+    }
+
+    submissions.push({
+        ...inputs.reduce((acc, input) => {
+            acc[input.id] = { value: input.value, checked: input.checked};
+            return acc;
+        }, {}),
+    })
+    localStorage.setItem("submissions", JSON.stringify(submissions));
+    console.log(submissions);
 }
