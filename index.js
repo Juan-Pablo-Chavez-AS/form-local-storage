@@ -30,10 +30,6 @@ form.addEventListener('reset', (event) => {
 
 function saveToLocalStorage() {
     const submissions = JSON.parse(localStorage.getItem("submissions")) || [];
-    console.log(submissions);
-    if (submissions === undefined) {
-        localStorage.setItem("submissions", "[]");
-    }
 
     submissions.push({
         ...inputs.reduce((acc, input) => {
