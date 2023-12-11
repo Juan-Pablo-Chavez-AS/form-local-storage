@@ -21,17 +21,17 @@
                 </p>
                 <p>
                     <label for="nightsQuantity">Nights:</label>
-                    <input id="nightsQuantity" type="text" required>
+                    <input id="nightsQuantity" type="number" min=0 required>
                     <span class="error-message" id="nightsQuantityError">Validation error</span>
                 </p>
                 <p>
                     <label for="adultsQuantity">Adults:</label>
-                    <input id="adultsQuantity" type="number" min=1 max=5 placeholder="1" required>
+                    <input id="adultsQuantity" type="number" min=1 max=5 value="1" required>
                     <span class="error-message" id="adultsQuantityError">Validation error</span>
                 </p>
                 <p>
                     <label for="childrenQuantity">Children:</label>
-                    <input id="childrenQuantity" type="number" min=0 max=5 placeholder="0" required>
+                    <input id="childrenQuantity" type="number" min=0 max=5 value="0" required>
                     <span class="error-message" id="childrenQuantityError">Validation error</span>
                 </p>
             </fieldset>
