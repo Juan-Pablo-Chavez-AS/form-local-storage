@@ -4,14 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Form Submit</title>
 </head>
 
 <body>
     <h1>Reservation Request</h1>
-    <form action="post">
-        
+    <form id="arrivalForm" novalidate>
+        <fieldset>
+            <fieldset>
+                <legend>General Information</legend>
+                <p>
+                    <label for="arrivalDate">Arrival Date:</label>
+                    <input id="arrivalDate" type="date" required>
+                    <span class="error-message" id="arrivalDateError">Validation error</span>
+                </p>
+                <p>
+                    <label for="nightsQuantity">Nights:</label>
+                    <input id="nightsQuantity" type="text" required>
+                    <span class="error-message" id="nightsQuantityError">Validation error</span>
+                </p>
+                <p>
+                    <label for="adultsQuantity">Adults:</label>
+                    <input id="adultsQuantity" type="number" min=1 max=5 placeholder="1" required>
+                    <span class="error-message" id="adultsQuantityError">Validation error</span>
+                </p>
+                <p>
+                    <label for="childrenQuantity">Children:</label>
+                    <input id="childrenQuantity" type="number" min=0 max=5 placeholder="0" required>
+                    <span class="error-message" id="childrenQuantityError">Validation error</span>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Preferences</legend>
+                <p>
+                    <span>Room Type:</span>
+                    <input type="radio" name="roomType" id="standardType" checked>
+                    <label for="standardType">Standard</label>
+                    <input type="radio" name="roomType" id="businessType">
+                    <label for="businessType">Business</label>
+                    <input type="radio" name="roomType" id="suitetype">
+                    <label for="suitetype">Suite</label>
+                </p>
+                <p>
+                    <span>Bed Type:</span>
+                    <input type="radio" name="bedType" id="kingType" checked>
+                    <label for="kingType">King</label>
+                    <input type="radio" name="bedType" id="doubleType">
+                    <label for="doubleType">Double Double</label>
+                </p>
+                <label for="smokeCheck">Smoking</label>
+                <input type="checkbox" name="smoke" id="smokeCheck">
+            </fieldset>
+            <fieldset>
+                <legend>Contact Information</legend>
+                <p>
+                    <label for="">name:</label>
+                    <input type="text" name="name" id="nameField" required>
+                    <span class="error-message" id="nameFieldError">Validation error</span>
+                </p>
+                <p>
+                    <label for="emailField">email:</label>
+                    <input type="email" name="email" id="emailField" required>
+                    <span class="error-message" id="emailFieldError">Validation error</span>
+                </p>
+                <p>
+                    <label for="phoneField">phone:</label>
+                    <input type="tel" name="phone" id="phoneField" required>
+                    <span class="error-message" id="phoneFieldError">Validation error</span>
+                </p>
+            </fieldset>
+            <p>
+                <button type="submit">Submit Reservation</button>
+                <button type="reset">Clear</button>
+            </p>
+        </fieldset>
     </form>
+    <script src="index.js"></script>
 </body>
 
 </html>
