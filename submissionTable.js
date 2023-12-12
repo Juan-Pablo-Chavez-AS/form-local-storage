@@ -1,5 +1,5 @@
 const submissions = JSON.parse(localStorage.getItem("submissions")) || [];
-const table = document.getElementById('myTable').getElementsByTagName('tbody')[0]; // Get table body
+const table = document.getElementById('myTable').getElementsByTagName('tbody')[0];
 
 submissions.forEach((submission, index) => {
     const newRow = table.insertRow();
